@@ -1,0 +1,160 @@
+.attorneys {
+  width: 555px;
+  max-width: 100%;
+  height: 525px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+
+  &__slide {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    padding: 15px;
+    overflow: visible;
+    transition: all 0.3s ease;
+
+    &-active {
+      z-index: 1;
+    }
+
+    .swiper-container-initialized &:not(.swiper-slide-active) {
+      filter: blur(5px);
+      transform: scale(80%);
+    }
+  }
+
+  &__container {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 4px 4px 11px 0 #b3b1b1;
+  }
+
+  &__col {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    &--1 {
+      width: 33.33333333%;
+      padding-right: 10px;
+    }
+
+    &--2 {
+      width: 66.66666666%;
+    }
+  }
+
+  & img {
+    display: inline-block;
+    margin: auto;
+    height: auto;
+    width: 125px;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
+  &__name {
+    padding: 0;
+    margin: 0;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 20px !important;
+    color: #3a4b5b !important;
+    text-transform: uppercase;
+  }
+
+  &__location {
+    padding: 0;
+    margin: 0;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
+    color: #404047;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 16px;
+    color: #8e8e9c;
+  }
+
+  &__button {
+    height: 50%;
+    width: 100%;
+    margin: 0;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: none;
+    }
+
+    &--prev {
+      top: 0;
+    }
+
+    &--next {
+      top: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .attorneys {
+    height: 200px;
+    max-width: 575px;
+    width: 100%;
+
+    &__col {
+      width: 100%;
+    }
+
+    img {
+      width: 120px;
+    }
+
+    &__button {
+      &--prev {
+        transform: translateY(-135%);
+      }
+
+      &--next {
+        transform: translateY(-35%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .attorneys {
+    margin-left: -15px;
+    margin-right: -15px;
+
+    &__name {
+      font-size: 10px !important;
+      line-height: 11px !important;
+    }
+
+    &__location {
+      font-size: 10px;
+      line-height: 11px;
+    }
+
+    &__desc {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}

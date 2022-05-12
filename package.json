@@ -1,0 +1,40 @@
+{
+  "name": "lawclerk-widgets",
+  "version": "1.0.0",
+  "description": "Custom Elementor widgets for LAWCLERK's website.",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src -d assets && sass --no-source-map src/scss:assets/css && postcss assets/css --use=autoprefixer --dir assets/css",
+    "watch:sass": "sass --watch --style=compressed src/scss:assets/css",
+    "watch:babel": "./node_modules/.bin/babel --watch src -d assets",
+    "watch": "onchange \"src\" -- npm run build"
+  },
+  "keywords": [],
+  "author": "MindK",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/eslint-parser": "^7.17.0",
+    "@babel/preset-env": "^7.17.10",
+    "autoprefixer": "^10.4.7",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-wesbos": "^3.0.2",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^9.1.0",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "core-js": "^3.22.4",
+    "regenerator-runtime": "^0.13.9"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ]
+}
